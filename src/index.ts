@@ -13,6 +13,7 @@
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+    console.log(`👺 got a request`)
+		return new Response('Hello Cloudflare Practice');
 	},
 } satisfies ExportedHandler<Env>;
