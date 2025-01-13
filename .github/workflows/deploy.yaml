@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - "#1"
 
 jobs:
   deploy:
@@ -16,4 +15,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: deploy # same as `npm run deploy:production`; cloudflare/wrangler-action only allows commands behind `wrangler`
+          command: wrangler deploy # same as `npm run deploy:production`; cloudflare/wrangler-action only allows commands behind `wrangler` or commands that starts with `wrangler`
