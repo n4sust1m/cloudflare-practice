@@ -12,12 +12,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: npm
-      - run: npm ci
       - name: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: npm run deploy:production
+          command: deploy # same as `npm run deploy:production`; cloudflare/wrangler-action only allows commands behind `wrangler`
