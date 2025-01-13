@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - "#1"
 
 jobs:
   deploy:
@@ -14,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           cache: npm
-      - uses: npm ci
+      - run: npm ci
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
