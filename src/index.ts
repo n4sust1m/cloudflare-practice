@@ -9,4 +9,6 @@ app.get('/', (c) => {
 	return c.text('Hello Cloudflare Practice');
 })
 
+app.get('/health-check', (c) => c.text('ok'))
+
 export default app
