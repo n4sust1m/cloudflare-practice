@@ -20,4 +20,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npm run deploy
+          command: npm run deploy:production
